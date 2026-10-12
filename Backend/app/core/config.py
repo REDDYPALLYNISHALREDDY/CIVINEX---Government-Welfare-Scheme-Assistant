@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     APP_NAME: str = "Government Welfare Scheme Assistant"
     APP_VERSION: str = "0.1.0"
     ENVIRONMENT: str = "development"
+    ENABLE_LOCAL_AI: bool = True
     API_V1_PREFIX: str = "/api/v1"
     CORS_ORIGINS: str = "http://localhost:5173"
 
