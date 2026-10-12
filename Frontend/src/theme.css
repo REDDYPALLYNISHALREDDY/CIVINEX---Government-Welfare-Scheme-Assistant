@@ -1,0 +1,1590 @@
+
+/* CIVINEX theme support */
+
+html {
+  color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  background: #111916;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] #root {
+  color: #e5eee9;
+  background: #111916;
+}
+
+html[data-theme="dark"] .app-shell,
+html[data-theme="dark"] .main-area,
+html[data-theme="dark"] .page-content,
+html[data-theme="dark"] .management-page {
+  color: #e5eee9;
+  background-color: #111916;
+}
+
+/* Header and sidebar */
+
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .topbar {
+  color: #e5eee9;
+  background: #19221e;
+  border-color: #303d36;
+}
+
+html[data-theme="dark"] .brand p,
+html[data-theme="dark"] .nav-section-label,
+html[data-theme="dark"] .eyebrow,
+html[data-theme="dark"] .language-label,
+html[data-theme="dark"] .topbar-search {
+  color: #a7b8ae;
+}
+
+html[data-theme="dark"] .nav-item {
+  color: #c1cec6;
+}
+
+html[data-theme="dark"] .nav-item:hover,
+html[data-theme="dark"] .language-option:hover {
+  background: #25352d;
+}
+
+html[data-theme="dark"] .nav-item.active {
+  color: #8ee0b7;
+  background: #243e32;
+}
+
+html[data-theme="dark"] .help-card {
+  color: #a0e3bf;
+  background: #202f27;
+  border-color: #34483c;
+}
+
+html[data-theme="dark"] .help-card strong {
+  color: #d8e9df;
+}
+
+html[data-theme="dark"] .help-card p,
+html[data-theme="dark"] .sidebar-footer {
+  color: #a4b5aa;
+}
+
+html[data-theme="dark"] .icon-button,
+html[data-theme="dark"] .language-menu {
+  color: #e5eee9;
+  background: #202b25;
+  border-color: #39483f;
+}
+
+html[data-theme="dark"] .language-menu-title,
+html[data-theme="dark"] .language-option {
+  color: #dce8e0;
+}
+
+html[data-theme="dark"] .language-option.selected {
+  color: #9de5bd;
+  background: #294637;
+}
+
+html[data-theme="dark"] .header-user-name {
+  color: #e5eee9;
+}
+
+html[data-theme="dark"] .header-user-role {
+  color: #aabbb0;
+}
+
+html[data-theme="dark"] .profile-avatar {
+  color: #a0e3bf;
+  background: #294637;
+}
+
+html[data-theme="dark"] .theme-toggle {
+  color: #f4d58b;
+  border-color: #526044;
+}
+
+/* Main headings and general text */
+
+html[data-theme="dark"] .page-heading h1,
+html[data-theme="dark"] .page-heading h2,
+html[data-theme="dark"] .page-heading h3,
+html[data-theme="dark"] .management-page h1,
+html[data-theme="dark"] .management-page h2,
+html[data-theme="dark"] .management-page h3,
+html[data-theme="dark"] .feature-card h3,
+html[data-theme="dark"] .section-title-row h2,
+html[data-theme="dark"] .results-heading h3,
+html[data-theme="dark"] .detail-heading h2,
+html[data-theme="dark"] .detail-card h3,
+html[data-theme="dark"] .welcome-section h1 {
+  color: #e5eee9;
+}
+
+html[data-theme="dark"] .page-heading p,
+html[data-theme="dark"] .welcome-description,
+html[data-theme="dark"] .muted-text,
+html[data-theme="dark"] .results-heading > span,
+html[data-theme="dark"] .scheme-row-content > p,
+html[data-theme="dark"] .empty-state p,
+html[data-theme="dark"] .detail-description {
+  color: #b0c0b6;
+}
+
+/* Cards and content panels */
+
+html[data-theme="dark"] .feature-card,
+html[data-theme="dark"] .information-panel,
+html[data-theme="dark"] .trust-banner,
+html[data-theme="dark"] .backend-card,
+html[data-theme="dark"] .filter-panel,
+html[data-theme="dark"] .scheme-row,
+html[data-theme="dark"] .empty-state,
+html[data-theme="dark"] .detail-card,
+html[data-theme="dark"] .state-panel,
+html[data-theme="dark"] .document-table-wrapper,
+html[data-theme="dark"] .document-info-banner,
+html[data-theme="dark"] .assistant-card,
+html[data-theme="dark"] .assistant-panel,
+html[data-theme="dark"] .assistant-message,
+html[data-theme="dark"] .eligibility-card,
+html[data-theme="dark"] .recommendation-card,
+html[data-theme="dark"] .application-card,
+html[data-theme="dark"] .help-card-panel {
+  color: #e5eee9;
+  background-color: #19231e;
+  border-color: #344239;
+}
+
+html[data-theme="dark"] .feature-card:hover {
+  border-color: #4e8067;
+}
+
+html[data-theme="dark"] .feature-icon,
+html[data-theme="dark"] .welcome-icon,
+html[data-theme="dark"] .section-icon,
+html[data-theme="dark"] .trust-icon,
+html[data-theme="dark"] .empty-state-icon,
+html[data-theme="dark"] .scheme-row-icon {
+  color: #9de5bd;
+  background: #294637;
+}
+
+html[data-theme="dark"] .feature-status,
+html[data-theme="dark"] .prototype-tag {
+  color: #c0cec5;
+  background: #29362e;
+}
+
+html[data-theme="dark"] .feature-footer,
+html[data-theme="dark"] .app-footer {
+  color: #a7b6ac;
+  border-color: #303e35;
+}
+
+html[data-theme="dark"] .trust-banner p,
+html[data-theme="dark"] .connection-copy p,
+html[data-theme="dark"] .section-heading > div:nth-child(2) p {
+  color: #b0c0b6;
+}
+
+/* Forms and search controls */
+
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select,
+html[data-theme="dark"] .search-field,
+html[data-theme="dark"] .filter-field input,
+html[data-theme="dark"] .filter-field select {
+  color: #e5eee9;
+  background-color: #141d18;
+  border-color: #3a4a40;
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+  color: #8fa196;
+  opacity: 1;
+}
+
+html[data-theme="dark"] input:focus,
+html[data-theme="dark"] textarea:focus,
+html[data-theme="dark"] select:focus,
+html[data-theme="dark"] .search-field:focus-within {
+  border-color: #66b78d;
+  box-shadow: 0 0 0 3px rgb(102 183 141 / 18%);
+}
+
+html[data-theme="dark"] select option {
+  color: #e5eee9;
+  background: #19231e;
+}
+
+html[data-theme="dark"] label,
+html[data-theme="dark"] .filter-field {
+  color: #c3d0c7;
+}
+
+/* Buttons */
+
+html[data-theme="dark"] .secondary-button,
+html[data-theme="dark"] .back-button,
+html[data-theme="dark"] .official-link,
+html[data-theme="dark"] .refresh-button {
+  color: #a0e3bf;
+  background-color: #202f27;
+  border-color: #3c5948;
+}
+
+html[data-theme="dark"] .secondary-button:hover:not(:disabled),
+html[data-theme="dark"] .official-link:hover,
+html[data-theme="dark"] .refresh-button:hover:not(:disabled) {
+  background-color: #2b4435;
+}
+
+html[data-theme="dark"] .primary-button,
+html[data-theme="dark"] .scheme-submit-button,
+html[data-theme="dark"] .feature-card-button {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .feature-card-button {
+  background-color: transparent;
+}
+
+/* Scheme metadata and status indicators */
+
+html[data-theme="dark"] .scheme-meta span,
+html[data-theme="dark"] .status-active {
+  color: #a4e5bf;
+  background: #254535;
+}
+
+html[data-theme="dark"] .status-inactive,
+html[data-theme="dark"] .document-status {
+  color: #c0cbc4;
+  background: #303a34;
+}
+
+html[data-theme="dark"] .scheme-code {
+  color: #aebeb4;
+}
+
+html[data-theme="dark"] .document-info-banner {
+  color: #a0e3bf;
+  background: #1e3026;
+  border-color: #354c3d;
+}
+
+html[data-theme="dark"] .document-info-banner p {
+  color: #c1d3c7;
+}
+
+/* Tables */
+
+html[data-theme="dark"] .document-table th,
+html[data-theme="dark"] .document-table td {
+  color: #d6e2da;
+  background: transparent;
+  border-color: #303e35;
+}
+
+html[data-theme="dark"] .document-table th {
+  color: #c2d0c7;
+  background: #202b24;
+}
+
+html[data-theme="dark"] .document-table tbody tr:hover {
+  background: #202e26;
+}
+
+/* Source and citation elements */
+
+html[data-theme="dark"] .assistant-source,
+html[data-theme="dark"] .source-card,
+html[data-theme="dark"] .source-list,
+html[data-theme="dark"] .citation-card {
+  color: #dce8e0;
+  background: #202b24;
+  border-color: #39483f;
+}
+
+html[data-theme="dark"] a {
+  color: #91dcb2;
+}
+
+/* Authentication screens */
+
+html[data-theme="dark"] .auth-page {
+  color: #e5eee9;
+  background: #111916;
+}
+
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .auth-panel,
+html[data-theme="dark"] .login-card,
+html[data-theme="dark"] .register-card {
+  color: #e5eee9;
+  background: #19231e;
+  border-color: #344239;
+}
+
+html[data-theme="dark"] .auth-card h1,
+html[data-theme="dark"] .auth-card h2,
+html[data-theme="dark"] .auth-card h3,
+html[data-theme="dark"] .auth-panel h1,
+html[data-theme="dark"] .auth-panel h2 {
+  color: #e5eee9;
+}
+
+html[data-theme="dark"] .auth-card p,
+html[data-theme="dark"] .auth-panel p {
+  color: #b0c0b6;
+}
+
+/* Error states */
+
+html[data-theme="dark"] .error-panel {
+  color: #ffc1bb;
+  background: #351f1e;
+  border-color: #70403b;
+}
+
+html[data-theme="dark"] .error-panel h3,
+html[data-theme="dark"] .error-panel p {
+  color: #ffc1bb;
+}
+
+html[data-theme="dark"] .saved-scheme-error {
+  color: #ffaaa4;
+}
+
+html[data-theme="dark"] .saved-scheme-success {
+  color: #9de5bd;
+}
+
+/* Keep theme transitions subtle */
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .topbar,
+html[data-theme="dark"] .feature-card,
+html[data-theme="dark"] .scheme-row,
+html[data-theme="dark"] .detail-card,
+html[data-theme="dark"] .filter-panel,
+html[data-theme="dark"] .document-table-wrapper {
+  transition:
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-theme="dark"] *,
+  html[data-theme="dark"] *::before,
+  html[data-theme="dark"] *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+
+
+/* CIVINEX dark theme refinements: slate + blue */
+
+/* Main surfaces */
+html[data-theme="dark"] .sidebar,
+html[data-theme="dark"] .topbar {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+html[data-theme="dark"] body,
+html[data-theme="dark"] #root,
+html[data-theme="dark"] .app-shell,
+html[data-theme="dark"] .main-area,
+html[data-theme="dark"] .page-content {
+  background-color: #111827;
+}
+
+/* Remove the white health endpoint bar */
+html[data-theme="dark"] .endpoint-row {
+  color: #d1d5db;
+  background-color: #1f2937;
+  border: 1px solid #374151;
+}
+
+html[data-theme="dark"] .endpoint-row code {
+  color: #93c5fd;
+}
+
+/* Backend status card */
+html[data-theme="dark"] .backend-card {
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+html[data-theme="dark"] .connection-result {
+  border-color: #374151;
+}
+
+html[data-theme="dark"] .connection-copy strong,
+html[data-theme="dark"] .section-heading h3 {
+  color: #f3f4f6;
+}
+
+html[data-theme="dark"] .status-dot.connected {
+  background-color: #60a5fa;
+  box-shadow: 0 0 0 4px rgb(59 130 246 / 18%);
+}
+
+html[data-theme="dark"] .environment-tag {
+  color: #bfdbfe;
+  background-color: #1e3a5f;
+}
+
+/* Replace green accents with blue */
+html[data-theme="dark"] .brand-mark {
+  background-color: #2563eb;
+}
+
+html[data-theme="dark"] .nav-item.active {
+  color: #ffffff;
+  background-color: #2563eb;
+}
+
+html[data-theme="dark"] .nav-item.active svg {
+  color: #ffffff;
+}
+
+html[data-theme="dark"] .feature-icon,
+html[data-theme="dark"] .section-icon,
+html[data-theme="dark"] .trust-icon,
+html[data-theme="dark"] .empty-state-icon,
+html[data-theme="dark"] .scheme-row-icon,
+html[data-theme="dark"] .welcome-icon {
+  color: #93c5fd;
+  background-color: #1e3a5f;
+}
+
+html[data-theme="dark"] .section-eyebrow,
+html[data-theme="dark"] .back-button,
+html[data-theme="dark"] .official-link {
+  color: #93c5fd;
+}
+
+html[data-theme="dark"] .scheme-meta span,
+html[data-theme="dark"] .status-active {
+  color: #bfdbfe;
+  background-color: #1e3a5f;
+}
+
+html[data-theme="dark"] .refresh-button,
+html[data-theme="dark"] .secondary-button {
+  color: #bfdbfe;
+  background-color: #1f2937;
+  border-color: #475569;
+}
+
+html[data-theme="dark"] .refresh-button:hover:not(:disabled),
+html[data-theme="dark"] .secondary-button:hover:not(:disabled) {
+  background-color: #27364a;
+}
+
+/* Sidebar assistance card */
+html[data-theme="dark"] .help-card {
+  color: #bfdbfe;
+  background-color: #1e293b;
+  border-color: #374151;
+}
+
+html[data-theme="dark"] .help-card strong,
+html[data-theme="dark"] .help-card .help-card-link {
+  color: #bfdbfe;
+}
+
+html[data-theme="dark"] .help-card p {
+  color: #cbd5e1;
+}
+
+/* Profile and theme toggle */
+html[data-theme="dark"] .profile-avatar {
+  color: #dbeafe;
+  background-color: #1e3a5f;
+}
+
+html[data-theme="dark"] .theme-toggle {
+  color: #93c5fd;
+  background-color: #1f2937;
+  border-color: #475569;
+}
+
+/* Keep headings and body text readable */
+html[data-theme="dark"] .page-heading h1,
+html[data-theme="dark"] .page-heading h2,
+html[data-theme="dark"] .management-page h2,
+html[data-theme="dark"] .management-page h3,
+html[data-theme="dark"] .feature-card h3,
+html[data-theme="dark"] .results-heading h3,
+html[data-theme="dark"] .detail-card h3 {
+  color: #f3f4f6;
+}
+
+html[data-theme="dark"] .page-heading p,
+html[data-theme="dark"] .feature-card > p,
+html[data-theme="dark"] .scheme-row-content > p,
+html[data-theme="dark"] .muted-text {
+  color: #cbd5e1;
+}
+
+/* Remove remaining white table surfaces */
+html[data-theme="dark"] .document-table-wrapper,
+html[data-theme="dark"] .document-table,
+html[data-theme="dark"] .document-table tbody,
+html[data-theme="dark"] .document-table tr,
+html[data-theme="dark"] .document-table td {
+  background-color: #1f2937;
+}
+
+html[data-theme="dark"] .document-table th {
+  background-color: #273449;
+}
+
+html[data-theme="dark"] .document-table th,
+html[data-theme="dark"] .document-table td {
+  border-color: #374151;
+}
+
+/* Consistent input surfaces */
+html[data-theme="dark"] input,
+html[data-theme="dark"] textarea,
+html[data-theme="dark"] select,
+html[data-theme="dark"] .search-field {
+  color: #f3f4f6;
+  background-color: #111827;
+  border-color: #475569;
+}
+
+html[data-theme="dark"] input::placeholder,
+html[data-theme="dark"] textarea::placeholder {
+  color: #9ca3af;
+}
+
+
+
+/* CIVINEX: final dark-mode surface and form fixes */
+
+html[data-theme="dark"] .page-content {
+  background: #111827 !important;
+  color: #e5e7eb;
+}
+
+/* Common panels and forms */
+html[data-theme="dark"] .page-content section,
+html[data-theme="dark"] .page-content article,
+html[data-theme="dark"] .page-content .information-panel,
+html[data-theme="dark"] .page-content .filter-panel,
+html[data-theme="dark"] .page-content .empty-state,
+html[data-theme="dark"] .page-content .state-panel,
+html[data-theme="dark"] .page-content .scheme-form,
+html[data-theme="dark"] .page-content .document-upload-form,
+html[data-theme="dark"] .page-content .assistant-intro-panel,
+html[data-theme="dark"] .page-content .assistant-search-panel,
+html[data-theme="dark"] .page-content .assistant-state-panel,
+html[data-theme="dark"] .page-content .eligibility-form,
+html[data-theme="dark"] .page-content .recommendations-form,
+html[data-theme="dark"] .page-content .application-form,
+html[data-theme="dark"] .page-content .application-list,
+html[data-theme="dark"] .page-content .detail-card {
+  color: #e5e7eb;
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+/* Upload forms and nested form containers */
+html[data-theme="dark"] .page-content form,
+html[data-theme="dark"] .page-content .form-card,
+html[data-theme="dark"] .page-content .form-section,
+html[data-theme="dark"] .page-content .upload-form,
+html[data-theme="dark"] .page-content .scheme-form-card {
+  color: #e5e7eb;
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+/* Inputs, dropdowns, and text areas */
+html[data-theme="dark"] .page-content input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+html[data-theme="dark"] .page-content textarea,
+html[data-theme="dark"] .page-content select {
+  color: #f3f4f6 !important;
+  background-color: #111827 !important;
+  border-color: #475569 !important;
+}
+
+html[data-theme="dark"] .page-content input::placeholder,
+html[data-theme="dark"] .page-content textarea::placeholder {
+  color: #9ca3af !important;
+  opacity: 1;
+}
+
+html[data-theme="dark"] .page-content input[type="file"] {
+  color: #d1d5db;
+  background-color: #1f2937;
+}
+
+html[data-theme="dark"] .page-content input[type="checkbox"],
+html[data-theme="dark"] .page-content input[type="radio"] {
+  accent-color: #3b82f6;
+}
+
+/* Form labels and descriptions */
+html[data-theme="dark"] .page-content label,
+html[data-theme="dark"] .page-content .form-label,
+html[data-theme="dark"] .page-content .assistant-label,
+html[data-theme="dark"] .page-content .assistant-scheme-filter {
+  color: #cbd5e1;
+}
+
+html[data-theme="dark"] .page-content p,
+html[data-theme="dark"] .page-content .muted-text,
+html[data-theme="dark"] .page-content .assistant-muted-text,
+html[data-theme="dark"] .page-content .form-help,
+html[data-theme="dark"] .page-content .field-description {
+  color: #cbd5e1;
+}
+
+/* Blue accent for information banners */
+html[data-theme="dark"] .page-content .assistant-intro-panel,
+html[data-theme="dark"] .page-content .document-info-banner,
+html[data-theme="dark"] .page-content .eligibility-notice,
+html[data-theme="dark"] .page-content .recommendation-notice {
+  color: #dbeafe;
+  background-color: #1e3a5f !important;
+  border-color: #315781 !important;
+}
+
+html[data-theme="dark"] .page-content .assistant-intro-panel p,
+html[data-theme="dark"] .page-content .document-info-banner p {
+  color: #dbeafe;
+}
+
+/* Empty states and results */
+html[data-theme="dark"] .page-content .empty-state h3,
+html[data-theme="dark"] .page-content .state-panel h3,
+html[data-theme="dark"] .page-content .assistant-state-panel h3 {
+  color: #f3f4f6;
+}
+
+html[data-theme="dark"] .page-content .document-table-wrapper,
+html[data-theme="dark"] .page-content .document-table tbody tr,
+html[data-theme="dark"] .page-content .document-table td {
+  background-color: #1f2937 !important;
+  color: #e5e7eb;
+}
+
+/* Keep primary actions blue */
+html[data-theme="dark"] .page-content .primary-button,
+html[data-theme="dark"] .page-content .scheme-submit-button,
+html[data-theme="dark"] .page-content .primary-action {
+  color: #ffffff;
+  background-color: #2563eb;
+  border-color: #2563eb;
+}
+
+html[data-theme="dark"] .page-content .primary-button:hover:not(:disabled),
+html[data-theme="dark"] .page-content .scheme-submit-button:hover:not(:disabled),
+html[data-theme="dark"] .page-content .primary-action:hover:not(:disabled) {
+  background-color: #1d4ed8;
+}
+
+/* Keep disabled controls distinguishable */
+html[data-theme="dark"] .page-content button:disabled {
+  opacity: 0.55;
+}
+
+/* Keep authentication screens outside the dashboard dark */
+html[data-theme="dark"] .auth-page {
+  color: #e5e7eb;
+  background-color: #111827;
+}
+
+html[data-theme="dark"] .auth-card,
+html[data-theme="dark"] .login-card,
+html[data-theme="dark"] .register-card {
+  color: #e5e7eb;
+  background-color: #1f2937;
+  border-color: #374151;
+}
+
+
+
+
+/* Final CIVINEX dark-mode color corrections */
+
+/* Use slate consistently across the app */
+html[data-theme="dark"] body,
+html[data-theme="dark"] #root,
+html[data-theme="dark"] .app-shell,
+html[data-theme="dark"] .main-area,
+html[data-theme="dark"] .page-content,
+html[data-theme="dark"] .management-page {
+  background-color: #111827 !important;
+}
+
+/* Remove green active navigation backgrounds */
+html[data-theme="dark"] .sidebar .nav-item.active,
+html[data-theme="dark"] .sidebar .nav-item[aria-current="page"] {
+  color: #ffffff !important;
+  background-color: #2563eb !important;
+  border-color: #2563eb !important;
+}
+
+html[data-theme="dark"] .sidebar .nav-item.active svg,
+html[data-theme="dark"] .sidebar .nav-item[aria-current="page"] svg {
+  color: #ffffff !important;
+}
+
+/* Dark assistance card instead of white */
+html[data-theme="dark"] .sidebar .help-card {
+  color: #e5e7eb !important;
+  background-color: #1f2937 !important;
+  border: 1px solid #374151 !important;
+}
+
+html[data-theme="dark"] .sidebar .help-card strong,
+html[data-theme="dark"] .sidebar .help-card h3,
+html[data-theme="dark"] .sidebar .help-card a,
+html[data-theme="dark"] .sidebar .help-card button {
+  color: #93c5fd !important;
+}
+
+html[data-theme="dark"] .sidebar .help-card p {
+  color: #cbd5e1 !important;
+}
+
+/* Keep dashboard cards slate, not green */
+html[data-theme="dark"] .feature-card,
+html[data-theme="dark"] .information-panel,
+html[data-theme="dark"] .backend-card {
+  color: #e5e7eb !important;
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .feature-card h3,
+html[data-theme="dark"] .information-panel h3 {
+  color: #f3f4f6 !important;
+}
+
+html[data-theme="dark"] .feature-card p,
+html[data-theme="dark"] .information-panel p {
+  color: #cbd5e1 !important;
+}
+
+/* Blue icon tiles */
+html[data-theme="dark"] .feature-icon,
+html[data-theme="dark"] .section-icon {
+  color: #93c5fd !important;
+  background-color: #1e3a5f !important;
+}
+
+/* Blue theme toggle */
+html[data-theme="dark"] .theme-toggle {
+  color: #93c5fd !important;
+  background-color: #1f2937 !important;
+  border-color: #475569 !important;
+}
+
+/* Restore dark mode on the sidebar itself */
+html[data-theme="dark"] .sidebar {
+  color: #e5e7eb !important;
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+
+
+/* Dark mode: header profile section */
+html[data-theme="dark"] .header-user {
+  color: #e5e7eb !important;
+  background-color: #1f2937 !important;
+  border: 1px solid #374151;
+  border-radius: 16px;
+  padding: 8px 12px;
+}
+
+html[data-theme="dark"] .header-user-name {
+  color: #f3f4f6 !important;
+}
+
+html[data-theme="dark"] .header-user-role {
+  color: #bfdbfe !important;
+  background-color: #1e3a5f !important;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+html[data-theme="dark"] .header-user .profile-avatar {
+  color: #dbeafe !important;
+  background-color: #1e3a5f !important;
+}
+
+html[data-theme="dark"] .header-user .header-logout {
+  color: #bfdbfe !important;
+  background-color: #1f2937 !important;
+  border-color: #475569 !important;
+}
+
+html[data-theme="dark"] .header-user .header-logout:hover {
+  background-color: #27364a !important;
+}
+
+
+
+/* Fix sidebar text and icons on hover in dark mode */
+
+html[data-theme="dark"] .sidebar .nav-item:hover:not(.active),
+html[data-theme="dark"] .sidebar .nav-item:focus-visible:not(.active) {
+  color: #f3f4f6 !important;
+  background-color: #27364a !important;
+}
+
+html[data-theme="dark"] .sidebar .nav-item:hover:not(.active) svg,
+html[data-theme="dark"] .sidebar .nav-item:focus-visible:not(.active) svg {
+  color: #93c5fd !important;
+}
+
+html[data-theme="dark"] .sidebar .nav-item.active,
+html[data-theme="dark"] .sidebar .nav-item.active:hover {
+  color: #ffffff !important;
+  background-color: #2563eb !important;
+}
+
+html[data-theme="dark"] .sidebar .nav-item.active svg,
+html[data-theme="dark"] .sidebar .nav-item.active:hover svg {
+  color: #ffffff !important;
+}
+
+
+
+/* Dark mode: refresh buttons */
+html[data-theme="dark"] .refresh-button,
+html[data-theme="dark"] button.refresh-button,
+html[data-theme="dark"] .page-content button[aria-label*="Refresh"],
+html[data-theme="dark"] .page-content button[title*="Refresh"] {
+  color: #bfdbfe !important;
+  background-color: #1f2937 !important;
+  border: 1px solid #475569 !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="dark"] .refresh-button svg,
+html[data-theme="dark"] button[aria-label*="Refresh"] svg,
+html[data-theme="dark"] button[title*="Refresh"] svg {
+  color: #93c5fd !important;
+}
+
+html[data-theme="dark"] .refresh-button:hover:not(:disabled),
+html[data-theme="dark"] button[aria-label*="Refresh"]:hover:not(:disabled),
+html[data-theme="dark"] button[title*="Refresh"]:hover:not(:disabled) {
+  color: #ffffff !important;
+  background-color: #27364a !important;
+  border-color: #60a5fa !important;
+}
+
+html[data-theme="dark"] .refresh-button:disabled,
+html[data-theme="dark"] button[aria-label*="Refresh"]:disabled,
+html[data-theme="dark"] button[title*="Refresh"]:disabled {
+  color: #9ca3af !important;
+  background-color: #1f2937 !important;
+  opacity: 0.6;
+}
+
+
+
+/* Fix the Schemes page Refresh button in dark mode */
+html[data-theme="dark"] .management-page .filter-panel .filter-controls button.secondary-button {
+  color: #e5e7eb !important;
+  background-color: #1f2937 !important;
+  border: 1px solid #475569 !important;
+  box-shadow: none !important;
+}
+
+html[data-theme="dark"] .management-page .filter-panel .filter-controls button.secondary-button svg {
+  color: #93c5fd !important;
+}
+
+html[data-theme="dark"] .management-page .filter-panel .filter-controls button.secondary-button:hover:not(:disabled) {
+  color: #ffffff !important;
+  background-color: #27364a !important;
+  border-color: #60a5fa !important;
+}
+
+html[data-theme="dark"] .management-page .filter-panel .filter-controls button.secondary-button:disabled {
+  color: #9ca3af !important;
+  background-color: #1f2937 !important;
+  opacity: 0.6;
+}
+
+
+
+/* Dark mode: document upload form */
+
+html[data-theme="dark"] .scheme-form-panel,
+html[data-theme="dark"] .document-upload-panel {
+  color: #e5e7eb !important;
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+/* Information banner */
+html[data-theme="dark"] .scheme-form-panel .scheme-form-alert,
+html[data-theme="dark"] .document-upload-panel .scheme-form-alert,
+html[data-theme="dark"] .scheme-form-panel .document-info-banner {
+  color: #dbeafe !important;
+  background-color: #1e3a5f !important;
+  border-color: #315781 !important;
+}
+
+/* PDF upload drop zone */
+html[data-theme="dark"] .scheme-form-panel input[type="file"],
+html[data-theme="dark"] .document-upload-panel input[type="file"] {
+  color: #e5e7eb !important;
+  background-color: #1f2937 !important;
+}
+
+html[data-theme="dark"] .scheme-form-panel .file-upload-area,
+html[data-theme="dark"] .scheme-form-panel .upload-dropzone,
+html[data-theme="dark"] .scheme-form-panel .file-dropzone,
+html[data-theme="dark"] .document-upload-panel .file-upload-area,
+html[data-theme="dark"] .document-upload-panel .upload-dropzone,
+html[data-theme="dark"] .document-upload-panel .file-dropzone {
+  color: #e5e7eb !important;
+  background-color: #111827 !important;
+  border-color: #475569 !important;
+}
+
+/* File picker button */
+html[data-theme="dark"] .scheme-form-panel input[type="file"]::file-selector-button,
+html[data-theme="dark"] .document-upload-panel input[type="file"]::file-selector-button {
+  color: #dbeafe !important;
+  background-color: #27364a !important;
+  border: 1px solid #475569 !important;
+}
+
+/* Form text and controls */
+html[data-theme="dark"] .scheme-form-panel label,
+html[data-theme="dark"] .document-upload-panel label {
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .scheme-form-panel input,
+html[data-theme="dark"] .scheme-form-panel textarea,
+html[data-theme="dark"] .scheme-form-panel select,
+html[data-theme="dark"] .document-upload-panel input,
+html[data-theme="dark"] .document-upload-panel textarea,
+html[data-theme="dark"] .document-upload-panel select {
+  color: #f3f4f6 !important;
+  background-color: #111827 !important;
+  border-color: #475569 !important;
+}
+
+
+
+/* CIVINEX dark mode: document upload component */
+
+/* Upload panel */
+html[data-theme="dark"] .upload-panel {
+  color: #e5e7eb !important;
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .upload-panel-heading h3 {
+  color: #f3f4f6 !important;
+}
+
+html[data-theme="dark"] .upload-panel-heading p {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .upload-heading-icon {
+  color: #93c5fd !important;
+  background-color: #1e3a5f !important;
+}
+
+/* Information banner */
+html[data-theme="dark"] .upload-alert-info {
+  color: #dbeafe !important;
+  background-color: #1e3a5f !important;
+  border: 1px solid #315781 !important;
+}
+
+/* PDF upload drop zone — exact class from your component */
+html[data-theme="dark"] .upload-dropzone {
+  color: #e5e7eb !important;
+  background-color: #111827 !important;
+  border: 1px dashed #475569 !important;
+}
+
+html[data-theme="dark"] .upload-dropzone:hover {
+  background-color: #1e293b !important;
+  border-color: #60a5fa !important;
+}
+
+html[data-theme="dark"] .upload-dropzone svg {
+  color: #93c5fd !important;
+}
+
+html[data-theme="dark"] .upload-dropzone-title {
+  color: #f3f4f6 !important;
+}
+
+html[data-theme="dark"] .upload-dropzone-description {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .upload-select-label {
+  color: #dbeafe !important;
+  background-color: #1f2937 !important;
+  border: 1px solid #475569 !important;
+}
+
+html[data-theme="dark"] .upload-dropzone:hover .upload-select-label {
+  background-color: #27364a !important;
+  border-color: #60a5fa !important;
+}
+
+/* Selected PDF state */
+html[data-theme="dark"] .upload-dropzone.has-file {
+  background-color: #172554 !important;
+  border-color: #3b82f6 !important;
+}
+
+/* Form labels and helper text */
+html[data-theme="dark"] .document-upload-form label:not(.upload-dropzone) {
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .document-upload-form .field-help,
+html[data-theme="dark"] .document-upload-form .upload-form-footer p {
+  color: #9ca3af !important;
+}
+
+/* Keep form fields dark */
+html[data-theme="dark"] .document-upload-form input:not([type="file"]),
+html[data-theme="dark"] .document-upload-form select {
+  color: #f3f4f6 !important;
+  background-color: #111827 !important;
+  border-color: #475569 !important;
+}
+
+html[data-theme="dark"] .document-upload-form select option {
+  color: #f3f4f6 !important;
+  background-color: #1f2937 !important;
+}
+
+/* Upload feedback */
+html[data-theme="dark"] .upload-alert-error {
+  color: #fecaca !important;
+  background-color: #451a1a !important;
+  border-color: #7f1d1d !important;
+}
+
+html[data-theme="dark"] .upload-alert-success {
+  color: #bbf7d0 !important;
+  background-color: #14532d !important;
+  border-color: #166534 !important;
+}
+
+
+
+/* CIVINEX footer layout correction */
+
+.app-footer {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  padding: 18px 24px;
+  margin-top: 24px;
+  line-height: 1.6;
+}
+
+.app-footer p,
+.app-footer span {
+  margin: 0;
+  max-width: 100%;
+}
+
+.app-footer > :first-child {
+  flex: 1 1 280px;
+  text-align: left;
+}
+
+.app-footer > :last-child {
+  flex: 1 1 380px;
+  text-align: right;
+}
+
+/* Dark theme footer colors */
+html[data-theme="dark"] .app-footer {
+  color: #cbd5e1;
+  background-color: #111827;
+  border-top: 1px solid #374151;
+}
+
+/* Smaller screens */
+@media (max-width: 768px) {
+  .app-footer {
+    justify-content: flex-start;
+    padding: 16px;
+  }
+
+  .app-footer > :first-child,
+  .app-footer > :last-child {
+    flex: 1 1 100%;
+    text-align: left;
+  }
+}
+
+
+
+/* Fix CIVINEX login and registration input backgrounds */
+html[data-theme="dark"] .auth-input-wrap {
+  background: #111827 !important;
+  border: 1px solid #475569 !important;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+html[data-theme="dark"] .auth-input-wrap:focus-within {
+  background: #111827 !important;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 15%) !important;
+}
+
+html[data-theme="dark"] .auth-input-wrap > svg {
+  color: #9ca3af !important;
+  margin-left: 12px;
+}
+
+html[data-theme="dark"] .auth-input-wrap input,
+html[data-theme="dark"] .auth-input-wrap input:focus {
+  color: #f3f4f6 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+html[data-theme="dark"] .auth-input-wrap input::placeholder {
+  color: #9ca3af !important;
+  opacity: 1;
+}
+
+/* Prevent browser autofill from introducing white backgrounds */
+html[data-theme="dark"] .auth-input-wrap input:-webkit-autofill,
+html[data-theme="dark"] .auth-input-wrap input:-webkit-autofill:hover,
+html[data-theme="dark"] .auth-input-wrap input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #f3f4f6 !important;
+  -webkit-box-shadow: 0 0 0 1000px #111827 inset !important;
+  caret-color: #f3f4f6;
+}
+
+
+
+/* Fix Sign In / Sign Up toggle in dark mode */
+html[data-theme="dark"] .auth-mode-switch {
+  background: #111827 !important;
+  border: 1px solid #374151;
+  border-radius: 12px;
+  padding: 5px;
+}
+
+html[data-theme="dark"] .auth-mode-switch button {
+  color: #cbd5e1 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none;
+  border-radius: 9px;
+}
+
+html[data-theme="dark"] .auth-mode-switch button.selected {
+  color: #ffffff !important;
+  background: #2563eb !important;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 20%) !important;
+}
+
+html[data-theme="dark"] .auth-mode-switch button:hover:not(.selected) {
+  color: #ffffff !important;
+  background: #273449 !important;
+}
+
+
+
+/* Fix eligibility rules text in dark mode */
+html[data-theme="dark"] .detail-card,
+html[data-theme="dark"] .detail-card * {
+  color: #e5e7eb;
+}
+
+html[data-theme="dark"] .detail-card h3 {
+  color: #f9fafb !important;
+}
+
+html[data-theme="dark"] .detail-card dt,
+html[data-theme="dark"] .detail-card th {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .detail-card dd,
+html[data-theme="dark"] .detail-card td,
+html[data-theme="dark"] .detail-card p,
+html[data-theme="dark"] .detail-card li {
+  color: #e5e7eb !important;
+}
+
+html[data-theme="dark"] .detail-card tr {
+  border-color: #374151 !important;
+}
+
+
+
+/* Information notice — dark mode */
+html[data-theme="dark"] .auth-disclaimer,
+html[data-theme="dark"] .scheme-disclaimer,
+html[data-theme="dark"] .info-notice,
+html[data-theme="dark"] .notice,
+html[data-theme="dark"] .alert-info {
+  color: #e5e7eb !important;
+  background: #1f2937 !important;
+  border-color: #475569 !important;
+}
+
+html[data-theme="dark"] .auth-disclaimer *,
+html[data-theme="dark"] .scheme-disclaimer *,
+html[data-theme="dark"] .info-notice *,
+html[data-theme="dark"] .notice *,
+html[data-theme="dark"] .alert-info * {
+  color: #e5e7eb !important;
+}
+
+
+
+
+/* =========================================
+   CIVINEX — Scheme details dark-mode fixes
+   ========================================= */
+
+/* Scheme detail page: prevent horizontal overflow */
+html[data-theme="dark"] .scheme-detail-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
+}
+
+html[data-theme="dark"] .detail-heading {
+  min-width: 0;
+  max-width: 100%;
+}
+
+html[data-theme="dark"] .detail-heading h2 {
+  min-width: 0;
+  max-width: 100%;
+  color: #f3f4f6 !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+html[data-theme="dark"] .section-eyebrow {
+  color: #93c5fd !important;
+}
+
+html[data-theme="dark"] .scheme-code,
+html[data-theme="dark"] .muted-text {
+  color: #cbd5e1 !important;
+}
+
+/* Description and other detail cards */
+html[data-theme="dark"] .detail-card {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  color: #e5e7eb !important;
+  background: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .detail-card h3 {
+  color: #f9fafb !important;
+}
+
+html[data-theme="dark"] .detail-description {
+  color: #e5e7eb !important;
+  overflow-wrap: anywhere;
+}
+
+html[data-theme="dark"] .detail-list dt {
+  color: #cbd5e1 !important;
+}
+
+html[data-theme="dark"] .detail-list dd {
+  min-width: 0;
+  color: #e5e7eb !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+html[data-theme="dark"] .detail-list > div {
+  min-width: 0;
+  border-color: #374151 !important;
+}
+
+html[data-theme="dark"] .detail-grid {
+  min-width: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* The information notice shown above the scheme details */
+html[data-theme="dark"] .verification-note {
+  box-sizing: border-box;
+  max-width: 100%;
+  color: #e5e7eb !important;
+  background: #1f2937 !important;
+  border-left-color: #60a5fa !important;
+  overflow-wrap: anywhere;
+}
+
+/* Links and status */
+html[data-theme="dark"] .official-link,
+html[data-theme="dark"] .back-button {
+  color: #93c5fd !important;
+}
+
+html[data-theme="dark"] .status-active {
+  color: #bbf7d0 !important;
+  background: #14532d !important;
+}
+
+html[data-theme="dark"] .status-inactive {
+  color: #e5e7eb !important;
+  background: #374151 !important;
+}
+
+/* Responsive layout */
+@media (max-width: 680px) {
+  html[data-theme="dark"] .detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  html[data-theme="dark"] .detail-card-wide {
+    grid-column: auto;
+  }
+
+  html[data-theme="dark"] .detail-list > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+}
+
+
+
+
+/* Fix scheme detail page alignment */
+html[data-theme="dark"] .scheme-detail-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Align back button, heading and content */
+html[data-theme="dark"] .scheme-detail-page > * {
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Scheme title must wrap within the page */
+html[data-theme="dark"] .detail-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  min-width: 0;
+}
+
+html[data-theme="dark"] .detail-heading h2 {
+  width: 100%;
+  max-width: 100%;
+  margin: 8px 0;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 1.35;
+  letter-spacing: normal;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Consistent spacing for the detail sections */
+html[data-theme="dark"] .detail-grid {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  gap: 18px;
+}
+
+html[data-theme="dark"] .detail-card {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+/* Keep the back button compact */
+html[data-theme="dark"] .back-button {
+  align-self: flex-start;
+  margin: 0 0 8px;
+  padding: 8px 0;
+}
+
+@media (max-width: 680px) {
+  html[data-theme="dark"] .detail-heading h2 {
+    font-size: 1.4rem;
+  }
+
+  html[data-theme="dark"] .detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+
+/* Final fix: scheme detail horizontal alignment */
+html[data-theme="dark"] .main-area {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+html[data-theme="dark"] .page-content {
+  min-width: 0;
+  max-width: 1500px;
+  box-sizing: border-box;
+}
+
+html[data-theme="dark"] .scheme-detail-page,
+html[data-theme="dark"] .detail-heading,
+html[data-theme="dark"] .detail-heading h2,
+html[data-theme="dark"] .detail-grid,
+html[data-theme="dark"] .detail-card {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+html[data-theme="dark"] .detail-heading h2 {
+  white-space: normal !important;
+  overflow-wrap: anywhere !important;
+  word-break: normal !important;
+}
+
+html[data-theme="dark"] .detail-description,
+html[data-theme="dark"] .detail-list dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+html[data-theme="dark"] .detail-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 680px) {
+  html[data-theme="dark"] .detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+
+
+/* Align Back to schemes with the scheme detail content */
+html[data-theme="dark"] .scheme-detail-page > .back-button {
+  display: inline-flex;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 8px;
+  padding: 8px 0;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  line-height: 1.5;
+}
+
+/* Remove unwanted hover background */
+html[data-theme="dark"] .scheme-detail-page > .back-button:hover {
+  background: transparent !important;
+}
+
+/* Keep heading spacing consistent */
+html[data-theme="dark"] .scheme-detail-page > .detail-heading {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+/* Prevent child elements from stretching beyond the content */
+html[data-theme="dark"] .scheme-detail-page > * {
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+
+
+/* Restore consistent spacing on the scheme detail page */
+html[data-theme="dark"] .scheme-detail-page {
+  width: 100%;
+  max-width: 100%;
+  padding: 24px;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Keep the back button aligned with the content */
+html[data-theme="dark"] .scheme-detail-page > .back-button {
+  margin: 0 0 12px;
+  padding: 8px 0;
+  align-self: flex-start;
+  background: transparent !important;
+}
+
+/* Keep the scheme title within the page */
+html[data-theme="dark"] .scheme-detail-page .detail-heading h2 {
+  width: 100%;
+  max-width: 100%;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+  box-sizing: border-box;
+}
+
+/* Consistent card alignment */
+html[data-theme="dark"] .scheme-detail-page .detail-grid {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 680px) {
+  html[data-theme="dark"] .scheme-detail-page {
+    padding: 16px;
+  }
+}
