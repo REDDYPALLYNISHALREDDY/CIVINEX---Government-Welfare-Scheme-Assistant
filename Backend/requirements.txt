@@ -17,3 +17,4 @@ pwdlib[argon2]
 python-jose[cryptography]
 python-multipart
 PyMuPDF
+email-validator
