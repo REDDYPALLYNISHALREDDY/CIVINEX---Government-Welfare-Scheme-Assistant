@@ -3,7 +3,6 @@ from sqlalchemy.orm import Session
 
 from app.models.document import Document
 from app.models.scheme import Scheme
-from app.services.llm_service import generate_grounded_answer
 from app.services.retrieval_service import search_document_chunks
 
 
@@ -61,17 +60,19 @@ def answer_scheme_question(
     scheme_id: int | None = None,
     language: str = "en",
 ) -> dict:
-    """Retrieve relevant passages and generate a language-aware grounded answer."""
+    """Retrieve relevant passages and generate a grounded answer."""
 
     if language not in SUPPORTED_LANGUAGES:
         language = "en"
 
+    # Retrieve relevant document chunks.
     chunks = search_document_chunks(
         question,
         scheme_id=scheme_id,
         limit=5,
     )
 
+    # Return a localized fallback when no relevant chunks are found.
     if not chunks:
         return {
             "question": question,
@@ -83,11 +84,11 @@ def answer_scheme_question(
     passages = []
     sources = []
 
+    # Verify that retrieved chunks refer to existing database records.
     for chunk in chunks:
         document = db.get(Document, chunk["document_id"])
         scheme = db.get(Scheme, chunk["scheme_id"])
 
-        # Never invent metadata if the underlying records are missing.
         if document is None or scheme is None:
             continue
 
@@ -105,12 +106,15 @@ def answer_scheme_question(
                 "scheme_id": scheme.id,
                 "scheme_name": scheme.name,
                 "document_title": document.title,
-                "official_url": document.source_url or scheme.official_url,
+                "official_url": (
+                    document.source_url or scheme.official_url
+                ),
                 "chunk_indexes": [chunk["chunk_index"]],
                 "relevance_score": chunk["score"],
             }
         )
 
+    # Do not generate an answer without verified source records.
     if not passages:
         return {
             "question": question,
@@ -118,6 +122,9 @@ def answer_scheme_question(
             "sources": [],
             "grounded": False,
         }
+
+    # Import the language model service only when generation is required.
+    from app.services.llm_service import generate_grounded_answer
 
     answer = generate_grounded_answer(
         question,
