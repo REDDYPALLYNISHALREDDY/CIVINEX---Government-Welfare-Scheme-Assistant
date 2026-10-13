@@ -50,3 +50,40 @@ export async function getDocuments(
 
   return data as SchemeDocument[];
 }
+
+
+export interface DeleteAllDocumentsResult {
+  deleted_documents: number;
+  deleted_files: number;
+  warnings: string[];
+}
+
+export async function deleteAllDocuments(): Promise<DeleteAllDocumentsResult> {
+  const token = getAccessToken();
+
+  if (!token) {
+    throw new Error("Please log in before deleting documents.");
+  }
+
+  const response = await fetch(`${API_BASE_URL}/documents/all`, {
+    method: "DELETE",
+    headers: {
+      Accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  if (response.status === 401) {
+    throw new Error("Your session has expired. Please log in again.");
+  }
+
+  if (response.status === 403) {
+    throw new Error("Administrator access is required.");
+  }
+
+  if (!response.ok) {
+    throw new Error(`Unable to delete documents (HTTP ${response.status}).`);
+  }
+
+  return (await response.json()) as DeleteAllDocumentsResult;
+}

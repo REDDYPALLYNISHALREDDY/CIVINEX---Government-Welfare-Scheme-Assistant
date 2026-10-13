@@ -9,12 +9,7 @@ class PDFExtractionError(Exception):
 
 
 def extract_pdf_text(pdf_path: str | Path) -> str:
-    """
-    Extract text from a PDF file.
-
-    Returns the extracted text. An empty string means that no usable
-    text was found; the PDF may be scanned or contain only images.
-    """
+    """Extract selectable text from every page of a PDF."""
     path = Path(pdf_path)
 
     if not path.is_file():
@@ -31,6 +26,12 @@ def extract_pdf_text(pdf_path: str | Path) -> str:
 
             for page_number, page in enumerate(pdf, start=1):
                 page_text = page.get_text("text").strip()
+
+                # Log diagnostic information without logging document contents.
+                print(
+                    f"PDF extraction: page={page_number}, "
+                    f"characters={len(page_text)}"
+                )
 
                 if page_text:
                     extracted_pages.append(

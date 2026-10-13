@@ -10,6 +10,7 @@ import {
   FiMessageCircle,
   FiBookmark,
   FiCheck,
+  FiTrash2,
 } from "react-icons/fi";
 
 import "./App.css";
@@ -24,8 +25,11 @@ import MyApplicationsPage from "./components/MyApplicationsPage";
 import HelpPage from "./components/HelpPage";
 import AuthPage from "./components/AuthPage";
 
-import { getSchemes } from "./services/schemes";
-import { getDocuments } from "./services/documents";
+import { discoverSchemes, getSchemes } from "./services/schemes";
+import { getDocuments, deleteAllDocuments } from "./services/documents";
+import type {
+  SchemeDiscoveryResult,
+} from "./services/schemes";
 import {
   getSavedSchemes,
   saveScheme,
@@ -214,6 +218,13 @@ function SchemesPage({ user }: { user: User }) {
   const [savedSchemeMessage, setSavedSchemeMessage] = useState("");
   const [savedSchemeError, setSavedSchemeError] = useState("");
 
+  const [discoveryQuery, setDiscoveryQuery] = useState("");
+const [discoveryResults, setDiscoveryResults] =
+  useState<SchemeDiscoveryResult[]>([]);
+const [discoveryLoading, setDiscoveryLoading] = useState(false);
+const [discoveryError, setDiscoveryError] = useState("");
+const [discoverySearched, setDiscoverySearched] = useState(false);
+
   const isAdmin = user.role === "admin";
 
   const loadSchemes = useCallback(async () => {
@@ -332,6 +343,42 @@ function SchemesPage({ user }: { user: User }) {
     );
   }
 
+  async function handleDiscoverSchemes(
+  event: React.FormEvent<HTMLFormElement>
+) {
+  event.preventDefault();
+
+  const query = discoveryQuery.trim();
+
+  if (query.length < 3) {
+    setDiscoveryError("Enter at least 3 characters.");
+    return;
+  }
+
+  setDiscoveryLoading(true);
+  setDiscoveryError("");
+  setDiscoverySearched(true);
+  setDiscoveryResults([]);
+
+  try {
+    const results = await discoverSchemes(query, {
+      state: stateName.trim() || undefined,
+      government_level: governmentLevel || undefined,
+      limit: 10,
+    });
+
+    setDiscoveryResults(results);
+  } catch (error) {
+    setDiscoveryError(
+      error instanceof Error
+        ? error.message
+        : "Unable to discover schemes. Please try again."
+    );
+  } finally {
+    setDiscoveryLoading(false);
+  }
+}
+
   return (
     <div className="management-page">
       <div className="page-heading">
@@ -381,6 +428,114 @@ function SchemesPage({ user }: { user: User }) {
           }}
         />
       )}
+
+      
+<section className="information-panel scheme-discovery-panel">
+  <h3>Find schemes based on your needs</h3>
+  <p>
+    Describe your situation or what kind of support you need.
+    CIVINEX will search the scheme records available in its database.
+  </p>
+
+  <form onSubmit={handleDiscoverSchemes}>
+    <label htmlFor="scheme-discovery-query">
+      Describe what you are looking for
+    </label>
+
+    <textarea
+      id="scheme-discovery-query"
+      value={discoveryQuery}
+      onChange={(event) => setDiscoveryQuery(event.target.value)}
+      placeholder="Example: I am a farmer in Andhra Pradesh looking for government support."
+      rows={3}
+      maxLength={500}
+      required
+      disabled={discoveryLoading}
+    />
+
+    <button
+      type="submit"
+      className="scheme-submit-button"
+      disabled={discoveryLoading}
+    >
+      <FiSearch />
+      {discoveryLoading ? "Finding schemes..." : "Find suitable schemes"}
+    </button>
+  </form>
+
+  {discoveryError && (
+    <p role="alert" className="saved-scheme-error">
+      {discoveryError}
+    </p>
+  )}
+
+  {discoveryLoading && (
+    <p role="status">Searching the available scheme records...</p>
+  )}
+
+  {discoverySearched && !discoveryLoading && !discoveryError && (
+    <div className="scheme-list">
+      {discoveryResults.length === 0 ? (
+        <p>
+          No relevant schemes were found in the current database.
+          Try different wording or check whether scheme records exist.
+        </p>
+      ) : (
+        discoveryResults.map(({ scheme, relevance_score }) => (
+          <article className="scheme-row" key={scheme.id}>
+            <div className="scheme-row-content">
+              <h4>{scheme.name}</h4>
+              <p>
+                {scheme.description || "No description available."}
+              </p>
+
+              <div className="scheme-meta">
+                <span>
+                  {scheme.government_level === "state"
+                    ? "State government"
+                    : "Central government"}
+                </span>
+                {scheme.state && <span>{scheme.state}</span>}
+                {scheme.category && <span>{scheme.category}</span>}
+              </div>
+
+              <p>
+                <strong>Database relevance score:</strong>{" "}
+                {relevance_score}
+              </p>
+
+              {scheme.official_url && (
+                <a
+                  href={scheme.official_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Visit official scheme website
+                </a>
+              )}
+            </div>
+
+            <div className="scheme-row-actions">
+              <button
+                type="button"
+                className="primary-button"
+                onClick={() => setSelectedSchemeId(scheme.id)}
+              >
+                View details <FiArrowRight />
+              </button>
+            </div>
+          </article>
+        ))
+      )}
+    </div>
+  )}
+
+  <p className="muted-text">
+    Search relevance is not proof of eligibility. Verify eligibility
+    and application requirements using official scheme information.
+  </p>
+</section>
+
 
       <section className="filter-panel">
         <div className="search-field">
@@ -562,6 +717,43 @@ function DocumentsPage({ user }: { user: User }) {
   const [error, setError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
 
+  const [deleting, setDeleting] = useState(false);
+  const [actionMessage, setActionMessage] = useState("");
+  const [actionError, setActionError] = useState("");
+
+  async function handleDeleteAllDocuments() {
+  if (documents.length === 0 || deleting) return;
+
+  const confirmed = window.confirm(
+    `Permanently delete all ${documents.length} documents, their stored PDFs, and associated indexed vectors? This cannot be undone.`
+  );
+
+  if (!confirmed) return;
+
+  setDeleting(true);
+  setActionMessage("");
+  setActionError("");
+
+  try {
+    const result = await deleteAllDocuments();
+
+    setActionMessage(
+      `Deleted ${result.deleted_documents} document records and ${result.deleted_files} PDF files.` +
+        (result.warnings.length
+          ? ` Cleanup warnings: ${result.warnings.join(" ")}`
+          : "")
+    );
+
+    setAttempt((current) => current + 1);
+  } catch (err) {
+    setActionError(
+      err instanceof Error ? err.message : "Unable to delete documents."
+    );
+  } finally {
+    setDeleting(false);
+  }
+}
+
   const isAdmin = user.role === "admin";
 
   const loadDocuments = useCallback(async () => {
@@ -596,16 +788,42 @@ function DocumentsPage({ user }: { user: User }) {
           <p>{t("documentsPage.description")}</p>
         </div>
 
-        <button
-          type="button"
-          className="secondary-button"
-          onClick={() => setAttempt((current) => current + 1)}
-          disabled={loading}
-        >
-          <FiRefreshCw />
-          {t("documentsPage.refresh")}
-        </button>
+        <div className="document-page-actions">
+          {isAdmin && (
+            <button
+              type="button"
+              className="secondary-button"
+              onClick={() => void handleDeleteAllDocuments()}
+              disabled={loading || deleting || documents.length === 0}
+            >
+              <FiTrash2 />
+              {deleting ? "Deleting..." : "Delete All Documents"}
+            </button>
+          )}
+
+          <button
+            type="button"
+            className="secondary-button"
+            onClick={() => setAttempt((current) => current + 1)}
+            disabled={loading || deleting}
+          >
+            <FiRefreshCw />
+            {t("documentsPage.refresh")}
+          </button>
+        </div>
       </div>
+
+      {actionMessage && (
+        <div className="upload-alert upload-alert-success" role="status">
+          {actionMessage}
+        </div>
+      )}
+
+      {actionError && (
+        <div className="upload-alert upload-alert-error" role="alert">
+          {actionError}
+        </div>
+      )}
 
       {isAdmin ? (
         <DocumentUploadForm

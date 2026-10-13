@@ -20,6 +20,7 @@ from app.schemas.document import DocumentResponse
 from app.services.document_service import (
     list_documents,
     upload_scheme_document,
+    delete_all_scheme_documents,
 )
 
 
@@ -76,3 +77,16 @@ async def upload_document(
         )
     finally:
         await file.close()
+
+
+
+@router.delete("/all")
+def delete_all_documents(
+    db: Session = Depends(get_db),
+    current_admin: User = Depends(require_admin),
+) -> dict:
+    """
+    Delete all uploaded scheme documents.
+    Available only to administrators.
+    """
+    return delete_all_scheme_documents(db)

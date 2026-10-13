@@ -21,10 +21,20 @@ class AssistantSource(BaseModel):
     official_url: str | None = None
     chunk_indexes: list[int]
     relevance_score: float
+    
+class AssistantSchemeMatch(BaseModel):
+    scheme_id: int
+    scheme_name: str
+    description: str | None = None
+    benefits: str | None = None
+    official_url: str | None = None
+    relevance_score: float
 
 
 class AssistantAnswer(BaseModel):
     question: str
     answer: str
     sources: list[AssistantSource]
+    scheme_matches: list[AssistantSchemeMatch] = Field(default_factory=list)
     grounded: bool
+

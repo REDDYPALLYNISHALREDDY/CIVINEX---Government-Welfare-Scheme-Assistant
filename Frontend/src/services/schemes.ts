@@ -107,3 +107,41 @@ export async function createScheme(
 
   return handleResponse<Scheme>(response);
 }
+
+
+
+export interface SchemeDiscoveryResult {
+  scheme: Scheme;
+  relevance_score: number;
+}
+
+export async function discoverSchemes(
+  query: string,
+  filters: {
+    state?: string;
+    government_level?: string;
+    limit?: number;
+  } = {}
+): Promise<SchemeDiscoveryResult[]> {
+  const params = new URLSearchParams();
+  params.set("query", query.trim());
+
+  if (filters.state?.trim()) {
+    params.set("state", filters.state.trim());
+  }
+
+  if (filters.government_level) {
+    params.set("government_level", filters.government_level);
+  }
+
+  params.set("limit", String(filters.limit ?? 10));
+
+  const response = await fetch(
+    `${API_BASE_URL}/schemes/discover?${params.toString()}`,
+    {
+      headers: { Accept: "application/json" },
+    }
+  );
+
+  return handleResponse<SchemeDiscoveryResult[]>(response);
+}

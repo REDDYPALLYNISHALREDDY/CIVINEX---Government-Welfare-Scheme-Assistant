@@ -145,7 +145,10 @@
   "passages": "Passages",
   "questionTooShort": "Please enter a question containing at least 3 characters.",
   "unableToLoadSchemes": "Unable to load schemes.",
-  "unableToGenerate": "Unable to generate an answer. Please try again."
+  "unableToGenerate": "Unable to generate an answer. Please try again.",
+  "matchedSchemesTitle": "Potentially relevant schemes",
+  "matchedSchemesDescription": "These schemes matched your question based on information stored in CIVINEX. Verify their details with the official source.",
+  "schemeBenefits": "Recorded benefits"
 },
 
 

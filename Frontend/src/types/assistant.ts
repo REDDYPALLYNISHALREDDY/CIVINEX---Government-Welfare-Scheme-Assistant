@@ -17,9 +17,21 @@ export interface AssistantSource {
   relevance_score: number;
 }
 
+
+export interface AssistantSchemeMatch {
+  scheme_id: number;
+  scheme_name: string;
+  description: string | null;
+  benefits: string | null;
+  official_url: string | null;
+  relevance_score: number;
+}
+
+
 export interface AssistantAnswer {
   question: string;
   answer: string;
   sources: AssistantSource[];
+  scheme_matches: AssistantSchemeMatch[];
   grounded: boolean;
 }

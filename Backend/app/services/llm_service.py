@@ -178,7 +178,7 @@ def generate_grounded_answer(
     with torch.inference_mode():
         output = model.generate(
             **inputs,
-            max_new_tokens=350,
+            max_new_tokens=160,
             do_sample=False,
             pad_token_id=tokenizer.eos_token_id,
         )

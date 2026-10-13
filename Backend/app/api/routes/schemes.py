@@ -12,6 +12,7 @@ from app.services.scheme_service import (
     get_scheme_by_id,
     list_schemes,
 )
+from app.services.scheme_discovery_service import discover_schemes
 
 
 router = APIRouter(prefix="/schemes", tags=["Schemes"])
@@ -60,6 +61,33 @@ def post_scheme(
                 "Use a different code or leave it empty."
             ),
         )
+
+@router.get("/discover")
+def discover_scheme_matches(
+    query: str = Query(min_length=3, max_length=500),
+    state: str | None = Query(default=None, max_length=100),
+    government_level: str | None = Query(
+        default=None,
+        pattern=r"^(central|state)$",
+    ),
+    limit: int = Query(default=10, ge=1, le=50),
+    db: Session = Depends(get_db),
+):
+    results = discover_schemes(
+        db,
+        query=query,
+        state=state,
+        government_level=government_level,
+        limit=limit,
+    )
+
+    return [
+        {
+            "scheme": item["scheme"],
+            "relevance_score": item["relevance_score"],
+        }
+        for item in results
+    ]
 
 
 @router.get("/{scheme_id}", response_model=SchemeResponse)

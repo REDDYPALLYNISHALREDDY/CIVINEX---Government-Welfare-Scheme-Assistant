@@ -18,6 +18,7 @@ import type { Scheme } from "../types/scheme";
 import type {
   AssistantAnswer,
   AssistantSource,
+  AssistantSchemeMatch,
 } from "../types/assistant";
 
 function OfficialSourceLink({ url }: { url: string | null }) {
@@ -102,6 +103,46 @@ function SourceCard({ source }: { source: AssistantSource }) {
     </article>
   );
 }
+
+
+function SchemeMatchCard({
+  scheme,
+}: {
+  scheme: AssistantSchemeMatch;
+}) {
+  const { t } = useTranslation();
+
+  return (
+    <article className="assistant-scheme-match-card">
+      <div className="assistant-source-card-heading">
+        <FiBookOpen />
+
+        <div>
+          <h4>{scheme.scheme_name}</h4>
+          <p>
+            {t("assistantPage.schemeId")}: {scheme.scheme_id}
+          </p>
+        </div>
+      </div>
+
+      {scheme.description && (
+        <p className="assistant-scheme-match-description">
+          {scheme.description}
+        </p>
+      )}
+
+      {scheme.benefits && (
+        <div className="assistant-scheme-match-benefits">
+          <strong>{t("assistantPage.schemeBenefits")}</strong>
+          <p>{scheme.benefits}</p>
+        </div>
+      )}
+
+      <OfficialSourceLink url={scheme.official_url} />
+    </article>
+  );
+}
+
 
 export default function AssistantPage() {
   const { t, i18n } = useTranslation();
@@ -353,13 +394,33 @@ export default function AssistantPage() {
             </div>
           )}
 
+          
+          {answer.scheme_matches.length > 0 && (
+            <div className="assistant-sources-section">
+              <div>
+                <h3>{t("assistantPage.matchedSchemesTitle")}</h3>
+                <p>{t("assistantPage.matchedSchemesDescription")}</p>
+              </div>
+
+              <div className="assistant-scheme-match-list">
+                {answer.scheme_matches.map((scheme) => (
+                  <SchemeMatchCard
+                    key={scheme.scheme_id}
+                    scheme={scheme}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
+
           <div className="assistant-sources-section">
             <div>
               <h3>{t("assistantPage.sourcesTitle")}</h3>
               <p>{t("assistantPage.sourcesDescription")}</p>
             </div>
 
-            {answer.sources.length === 0 ? (
+            {answer.sources.length === 0 && answer.scheme_matches.length === 0 ? (
               <div className="empty-state">
                 <FiBookOpen />
 
